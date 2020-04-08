@@ -1,0 +1,16 @@
+@import 'variables';
+html, body, #root {
+    height: 100%;
+}
+html {
+    font-size: 62.5%; /* Sets up the Base 10 stuff */
+    font-family: 'Open Sans', sans-serif;
+    body {
+        height: 100%;
+        background: $bg-primary;
+        color: $primary-color;
+        font-size: 1.6rem;
+        margin: 0;
+        padding: 0;
+    }
+}

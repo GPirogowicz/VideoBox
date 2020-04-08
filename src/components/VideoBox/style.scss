@@ -1,0 +1,69 @@
+@import '../../assets/styles/common';
+.video-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    margin: 2rem;
+    &__target-box,
+    .target-box {
+        width: 70%;
+        position: relative;
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
+        &__drop-container-wrapper {
+            position: absolute;
+            width: 100%;
+            height: calc(100% - 60px);
+            z-index: 1;
+            top: 0;
+        }
+        &__video-player {
+            width: 100%;
+            position: relative;
+        }
+        &__boxes-config,
+        .boxes-config {
+            margin-top: 2rem;
+            &__box-wrapper,
+            .box-wrapper {
+                margin: 1rem 0;
+                width: 100%;
+                box-sizing: border-box;
+                padding: 1.5rem;
+                background-color: #fff;
+                &__input {
+                    padding: 1rem 2rem;
+                    font-size: 2rem;
+                    width: 100%;
+                    box-sizing: border-box;
+                }
+                &__range {
+                    .MuiSlider-rail {
+                        height: 10px;
+                    }
+                    .MuiSlider-track {
+                        height: 10px;
+                    }
+                    .MuiSlider-thumb {
+                        width: 18px;
+                        height: 18px;
+                        .PrivateValueLabel-label-25 {
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__source-box {
+        width: 25%;
+        padding-left: 15px;
+        min-height: 200px;
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            padding-left: 0;
+        }
+    }
+}
