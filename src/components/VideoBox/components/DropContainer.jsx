@@ -1,62 +1,19 @@
-import React, { useRef } from 'react';
-import { useDrop } from 'react-dnd';
-import ItemTypes from '../service/ItemTypes';
-import Box from './Box';
-import './style.scss';
+import React from 'react';
+import DragBox from './DragBox';
 import PropTypes from 'prop-types';
-import pxToPercente from '../../../helpers/pxToPercente';
+import useLocalDrop from '../services/useLocalDrop';
 
-const DropContainer = ({ boxes, addBox, setBoxes, videoMetaInfo }) => {
-    const ref = useRef();
-    const [, drop] = useDrop({
-        accept: [ItemTypes.BOX, ItemTypes.SOURCE_BOX],
-        drop(item, monitor) {
-            console.log(ref.current);
-            let delta = monitor.getDifferenceFromInitialOffset();
-            if (item.type === ItemTypes.BOX) {
-                delta.x = pxToPercente(delta.x, videoMetaInfo.offsetWidth);
-                delta.y = pxToPercente(
-                    delta.y,
-                    videoMetaInfo.offsetHeight - 60
-                );
-                moveBox(
-                    item.id,
-                    item.percenteLeft + delta.x,
-                    item.percenteTop + delta.y
-                );
-            } else if (item.type === ItemTypes.SOURCE_BOX) {
-                const position = monitor.getSourceClientOffset();
-                item.percenteLeft = pxToPercente(
-                    position.x,
-                    videoMetaInfo.offsetWidth
-                );
-                item.percenteTop = pxToPercente(
-                    position.y,
-                    videoMetaInfo.offsetHeight - 60
-                );
-                addBox(item);
-            }
-            return undefined;
-        },
-        collect: props => props,
-    });
+const DropContainer = ({ boxes, videoMetaInfo, addBox, updateBox }) => {
+    const ref = useLocalDrop(videoMetaInfo, addBox, updateBox);
 
-    const moveBox = (id, percenteLeft, percenteTop) => {
-        const boxIndex = boxes.findIndex(box => box.id === id);
-        if (boxIndex !== -1) {
-            boxes[boxIndex] = {
-                ...boxes[boxIndex],
-                percenteLeft,
-                percenteTop,
-            };
-            setBoxes([...boxes]);
-        }
-    };
-    console.log(boxes);
     return (
-        <div ref={drop} className="drop-container">
+        <div ref={ref} className="drop-container">
             {boxes.map(box => (
-                <Box key={box.id} box={box} />
+                <DragBox
+                    key={box.id}
+                    box={box}
+                    scale={videoMetaInfo.scale || 1}
+                />
             ))}
         </div>
     );
@@ -64,8 +21,8 @@ const DropContainer = ({ boxes, addBox, setBoxes, videoMetaInfo }) => {
 
 DropContainer.propTypes = {
     boxes: PropTypes.array,
-    setBoxes: PropTypes.func,
     addBox: PropTypes.func,
+    updateBox: PropTypes.func,
     videoMetaInfo: PropTypes.object,
 };
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../styles/videoPlayer.scss';
 
 const VideoPlayer = ({
     wrapperOptions = { controls: true, width: 320 },
@@ -8,6 +9,7 @@ const VideoPlayer = ({
     onDurationChange,
     onPlay,
     onPaused,
+    onTimeUpdate,
 }) => {
     return (
         <div className="video-player">
@@ -17,6 +19,7 @@ const VideoPlayer = ({
                 onDurationChange={onDurationChange}
                 onPlay={onPlay}
                 onPause={onPaused}
+                onTimeUpdate={onTimeUpdate}
             >
                 <source src={source} />
             </video>
@@ -31,6 +34,7 @@ VideoPlayer.propTypes = {
     onDurationChange: PropTypes.func.isRequired,
     onPlay: PropTypes.func.isRequired,
     onPaused: PropTypes.func.isRequired,
+    onTimeUpdate: PropTypes.func.isRequired,
 };
 
 export default VideoPlayer;

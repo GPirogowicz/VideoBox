@@ -5,7 +5,7 @@ import { VideoBox } from './components/VideoBox';
 const App = () => {
     return (
         <>
-            <VideoBox source="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" />
+            <VideoBox source="http://www.w3schools.com/html/mov_bbb.mp4" />
         </>
     );
 };

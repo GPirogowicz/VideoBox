@@ -1,0 +1,41 @@
+@import '../../../assets/styles/common';
+.video-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    margin: 2rem;
+    &__target-container {
+        width: 70%;
+        position: relative;
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
+        .video-wrapper {
+            position: relative;
+            &__drop-container-wrapper {
+                position: absolute;
+                width: 100%;
+                height: calc(100% - 60px);
+                z-index: 1;
+                top: 0;
+            }
+            .video-player {
+                width: 100%;
+                position: relative;
+            }
+        }
+        &.boxes-config {
+            margin-top: 2rem;
+        }
+    }
+    &__source-container {
+        width: 25%;
+        padding-left: 15px;
+        min-height: 200px;
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            padding-left: 0;
+        }
+    }
+}

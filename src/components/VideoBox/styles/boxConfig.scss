@@ -1,0 +1,28 @@
+.box-editor {
+    margin: 1rem 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1.5rem;
+    background-color: #fff;
+    &__input {
+        padding: 1rem 2rem;
+        font-size: 2rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    &__range {
+        .MuiSlider-rail {
+            height: 10px;
+        }
+        .MuiSlider-track {
+            height: 10px;
+        }
+        .MuiSlider-thumb {
+            width: 18px;
+            height: 18px;
+            .PrivateValueLabel-label-25 {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

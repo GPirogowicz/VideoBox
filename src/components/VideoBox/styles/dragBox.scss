@@ -29,14 +29,15 @@
 .box {
     position: absolute;
     background-color: $bg-secondary;
-    border-radius: 0.5rem;
     color: $bg-primary;
     padding: 2rem;
     cursor: move;
+    width: 120px;
+    height: 30px;
     // opacity: 1;
     // animation: box-visible 0.5s normal;
     &.box-hidden {
         opacity: 0;
-        animation: box-hidden 1s normal;
+        animation: box-hidden 0.4s normal;
     }
 }
