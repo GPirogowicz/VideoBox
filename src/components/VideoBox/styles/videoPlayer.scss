@@ -1,4 +1,83 @@
+@import '../../../assets/styles/common';
 .video-player {
     width: 100%;
     position: relative;
+    background-color: transparent;
+    &__controls {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        background: rgba(0, 0, 0, 0.3);
+        .progress-bar {
+            width: 65%;
+            margin-top: 3px;
+        }
+        .tools {
+            width: 30%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            .progress-time {
+                margin-left: 5px;
+            }
+        }
+        .btn-toggle {
+            $size: 2.5rem;
+            $offset: 1.4rem;
+            box-sizing: border-box;
+            background-color: transparent;
+            outline: none;
+            padding: 0;
+            margin: 10px;
+            height: $size;
+            width: $size;
+            border: 2px solid #ffffff;
+            border-radius: $size/2;
+            transition: 100ms all ease;
+            will-change: border-width;
+            position: relative;
+            cursor: pointer;
+
+            &::after {
+                content: '';
+                height: $size - $offset;
+                width: $size - $offset;
+                padding: 0;
+                box-sizing: border-box;
+                display: block;
+                position: absolute;
+                border-style: solid;
+            }
+            &--play {
+                &:hover,
+                :active {
+                    &::after {
+                        border-left-color: darken(#fff, 30);
+                    }
+                }
+                &::after {
+                    transform: translate(60%, -50%);
+                    border-color: transparent transparent transparent #ffffff;
+
+                    border-width: (($size - $offset)/2) 0 (($size - $offset)/2)
+                        ($size - $offset);
+                }
+            }
+            &--pause {
+                &::after {
+                    transform: translate(45%, -50%);
+                    border-color: transparent #fff transparent #fff;
+                    border-width: 0 (($size - $offset)/3) 0
+                        (($size - $offset)/3);
+                }
+                &:hover,
+                :active {
+                    &::after {
+                        border-left-color: darken(#fff, 30);
+                        border-right-color: darken(#fff, 30);
+                    }
+                }
+            }
+        }
+    }
 }

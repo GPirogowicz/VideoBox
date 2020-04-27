@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="63543c9b-ef19-448f-9236-2c9465f57345" name="Default Changelist" comment="" />
+    <list default="true" id="63543c9b-ef19-448f-9236-2c9465f57345" name="Default Changelist" comment="refactor: refactoring VideoBox component&#10;# BREAKING CHANGE:&#10;* Add custom hooks useBoxes, useLocalDrop, and transfer logic of components to hooks&#10;* Transfer BoxConfig component to external FC&#10;* Add Box model class">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1aD1ahwuIZLNINSFkJB59hyDVc0" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -36,10 +42,35 @@
       <option name="presentableId" value="Default" />
       <updated>1586255415968</updated>
       <workItem from="1586255417233" duration="1257000" />
+      <workItem from="1587898182659" duration="1198000" />
     </task>
+    <task id="LOCAL-00001" summary="refactor: refactoring VideoBox component&#10;# BREAKING CHANGE:&#10;* Add custom hooks useBoxes, useLocalDrop, and transfer logic of components to hooks&#10;* Transfer BoxConfig component to external FC&#10;* Add Box model class">
+      <created>1587898760355</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1587898760355</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="refactor: refactoring VideoBox component&#10;# BREAKING CHANGE:&#10;* Add custom hooks useBoxes, useLocalDrop, and transfer logic of components to hooks&#10;* Transfer BoxConfig component to external FC&#10;* Add Box model class" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: refactoring VideoBox component&#10;# BREAKING CHANGE:&#10;* Add custom hooks useBoxes, useLocalDrop, and transfer logic of components to hooks&#10;* Transfer BoxConfig component to external FC&#10;* Add Box model class" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1351" y="0" key="CommitChangelistDialog2" timestamp="1587899592384">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1351" y="0" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587899592384" />
+    <state x="-1368" y="249" key="Vcs.Push.Dialog.v2" timestamp="1587898767866">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1368" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587898767866" />
   </component>
 </project>

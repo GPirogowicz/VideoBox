@@ -12,10 +12,7 @@ function useLocalDrop(videoMetaInfo, addBox, updateBox) {
             let delta = monitor.getDifferenceFromInitialOffset();
             if (box.type === ItemTypes.BOX) {
                 delta.x = pxToPercente(delta.x, videoMetaInfo.offsetWidth);
-                delta.y = pxToPercente(
-                    delta.y,
-                    videoMetaInfo.offsetHeight - 60
-                );
+                delta.y = pxToPercente(delta.y, videoMetaInfo.offsetHeight);
                 box.style.left += delta.x;
                 box.style.top += delta.y;
                 updateBox(box);
@@ -29,7 +26,7 @@ function useLocalDrop(videoMetaInfo, addBox, updateBox) {
                     );
                     box.style.top = pxToPercente(
                         offset.y - dropTargetXy.top,
-                        videoMetaInfo.offsetHeight - 60
+                        videoMetaInfo.offsetHeight
                     );
                     addBox(box);
                 }

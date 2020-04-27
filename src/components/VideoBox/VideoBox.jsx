@@ -19,14 +19,14 @@ const VideoBox = ({ source }) => {
     const styleWrapper = {};
     if (videoMetaInfo && videoMetaInfo.offsetHeight) {
         stylePlayer.height = videoMetaInfo.offsetHeight;
-        styleWrapper.height = videoMetaInfo.offsetHeight - 60;
+        styleWrapper.height = videoMetaInfo.offsetHeight;
     }
     console.log(boxes.getAll());
     return (
         <div className="video-box">
             <DndProvider backend={Backend}>
                 <div className="video-box__target-container">
-                    <div className="video-wrapper" style={stylePlayer}>
+                    <div className="video-wrapper">
                         <VideoPlayer
                             source={source}
                             playerRef={VideoPlayerRef}
@@ -37,7 +37,10 @@ const VideoBox = ({ source }) => {
                             onPaused={videoMetaInfo.handleTogglePlay}
                             onTimeUpdate={videoMetaInfo.handleTimeUpdate}
                         />
-                        <div className="video-wrapper__drop-container-wrapper">
+                        <div
+                            style={styleWrapper}
+                            className="video-wrapper__drop-container-wrapper"
+                        >
                             <DropContainer
                                 videoMetaInfo={videoMetaInfo}
                                 boxes={boxes.getAll()}
@@ -53,6 +56,7 @@ const VideoBox = ({ source }) => {
                                 box={box}
                                 updateBox={boxes.updateBox}
                                 sliderLength={videoMetaInfo.duration}
+                                currentTime={videoMetaInfo.currentTime}
                             />
                         ))}
                     </div>

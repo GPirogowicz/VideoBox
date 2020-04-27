@@ -26,6 +26,7 @@ function useBoxes(videoMetaInfo) {
     const updateBox = box => {
         const boxIndex = boxes.findIndex(item => item.id === box.id);
         if (boxIndex !== -1) {
+            box.visible = isVisible(box);
             boxes[boxIndex] = box;
             setBoxes([...boxes]);
         }
